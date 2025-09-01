@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/fragments :: head('Контакт — WEBX', #{site.description}, ${baseUrl + '/contact'})"></head>
+<head th:replace="fragments/header :: head"></head>
 <body>
-<header th:replace="fragments/fragments :: header"></header>
+<div th:replace="fragments/header :: header"></div>
 
-<section class="py-16 container grid md:grid-cols-2 gap-10 items-center">
-  <div>
-    <h1 class="text-3xl font-bold mb-4">Свържете се с нас</h1>
-    <p class="mb-6 text-slate-600">Изпратете ни запитване и ще ви отговорим възможно най-бързо.</p>
-    <form th:action="@{/contact}" th:object="${form}" method="post" class="space-y-4">
-      <input type="text" th:field="*{name}" placeholder="Вашето име" class="w-full border rounded p-2"/>
-      <input type="email" th:field="*{email}" placeholder="Вашият имейл" class="w-full border rounded p-2"/>
-      <input type="text" th:field="*{phone}" placeholder="Телефон (по избор)" class="w-full border rounded p-2"/>
-      <textarea th:field="*{message}" placeholder="Съобщение" class="w-full border rounded p-2"></textarea>
-      <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Изпрати</button>
+<section class="py-20 bg-[#1a1a1a]">
+  <div class="container mx-auto px-6 max-w-2xl">
+    <h2 class="text-3xl font-bold text-center neon-text mb-12">Свържете се с нас</h2>
+
+    <!-- алерт при успешно изпращане -->
+    <div th:if="${success}" class="mb-6 p-4 rounded-xl border border-[#00ff88] text-[#00ff88] bg-black">
+      Благодарим! Съобщението беше изпратено успешно.
+    </div>
+
+    <!-- ЕДНА форма -->
+    <form th:action="@{/send-message}" method="post" class="bg-black neon-box rounded-xl p-8 space-y-6">
+      <!-- ако имаш Spring Security, добави CSRF: -->
+      <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/> -->
+
+      <!-- honeypot (скрито поле за ботове) -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" />
+
+      <input type="text" name="name" placeholder="Вашето име" required
+             class="w-full border border-[#00ff88] rounded-lg px-4 py-2 bg-[#141414] text-white">
+      <input type="email" name="email" placeholder="Вашият имейл" required
+             class="w-full border border-[#00ff88] rounded-lg px-4 py-2 bg-[#141414] text-white">
+      <textarea name="message" rows="5" placeholder="Вашето съобщение" required
+                class="w-full border border-[#00ff88] rounded-lg px-4 py-2 bg-[#141414] text-white"></textarea>
+
+      <button type="submit" class="bg-[#00ff88] text-black px-6 py-2 rounded-full hover:bg-[#00cc66] transition">
+        Изпрати
+      </button>
     </form>
-  </div>
-  <div class="hidden md:block">
-    <img th:src="@{/images/seo.svg}" alt="Contact illustration" class="rounded-xl shadow">
+
+    <div class="mt-12">
+      <iframe class="w-full h-64 rounded-xl"
+              src="https://maps.google.com/maps?q=Vidin+Bulgaria&output=embed"
+              loading="lazy" style="border:0;"></iframe>
+    </div>
   </div>
 </section>
 
-<footer th:replace="fragments/fragments :: footer"></footer>
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

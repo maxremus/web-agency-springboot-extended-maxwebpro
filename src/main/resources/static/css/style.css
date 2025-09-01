@@ -1,0 +1,27 @@
+/* Tech design custom styles */
+body {
+  background-color: #141414;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+}
+a, h1, h2, h3, h4 {
+  color: #00ff88;
+}
+a:hover {
+  color: #00cc66;
+}
+.neon-box {
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 15px #00ff88;
+}
+.neon-text {
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
+.icon-service {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem auto;
+}
+

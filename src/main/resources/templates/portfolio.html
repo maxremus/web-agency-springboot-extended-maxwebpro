@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/fragments :: head('Портфолио — WEBX', #{site.description}, ${baseUrl + '/portfolio'})"></head>
+<head th:replace="fragments/header :: head"></head>
 <body>
-<header th:replace="fragments/fragments :: header"></header>
+<div th:replace="fragments/header :: header"></div>
 
-<section class="py-16 container">
-  <h1 class="text-3xl font-bold mb-10 text-center">Наши проекти</h1>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="rounded-2xl border overflow-hidden shadow-sm">
-      <img th:src="@{/images/retail.svg}" alt="Retail eCommerce" class="w-full">
-      <div class="p-4">
-        <h3 class="font-semibold">Retail eCommerce</h3>
-        <p class="text-sm text-slate-600">Каталог 5k+ продукта, плащания и куриери.</p>
+<section class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center neon-text mb-12">Нашето портфолио</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="relative overflow-hidden rounded-xl">
+        <img th:src="@{/img/portfolio1.png}" class="w-full h-56 object-cover">
+        <div class="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex items-center justify-center text-[#00ff88] font-bold transition">Проект 1</div>
       </div>
-    </div>
-    <div class="rounded-2xl border overflow-hidden shadow-sm">
-      <img th:src="@{/images/corporate.svg}" alt="Corporate" class="w-full">
-      <div class="p-4">
-        <h3 class="font-semibold">Корпоративен сайт</h3>
-        <p class="text-sm text-slate-600">SEO-оптимизиран, бърз и елегантен.</p>
+      <div class="relative overflow-hidden rounded-xl">
+        <img th:src="@{/img/portfolio2.png}" class="w-full h-56 object-cover">
+        <div class="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex items-center justify-center text-[#00ff88] font-bold transition">Проект 2</div>
       </div>
-    </div>
-    <div class="rounded-2xl border overflow-hidden shadow-sm">
-      <img th:src="@{/images/b2b.svg}" alt="B2B" class="w-full">
-      <div class="p-4">
-        <h3 class="font-semibold">B2B платформа</h3>
-        <p class="text-sm text-slate-600">Роли, отчети и интеграции чрез REST API.</p>
+      <div class="relative overflow-hidden rounded-xl">
+        <img th:src="@{/img/portfolio3.png}" class="w-full h-56 object-cover">
+        <div class="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex items-center justify-center text-[#00ff88] font-bold transition">Проект 3</div>
       </div>
     </div>
   </div>
 </section>
 
-<footer th:replace="fragments/fragments :: footer"></footer>
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

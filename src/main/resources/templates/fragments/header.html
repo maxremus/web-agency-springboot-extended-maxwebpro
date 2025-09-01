@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${pageTitle}">MaxWebPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-[#141414] text-gray-200">
+
+<header th:fragment="header" class="bg-black/80 backdrop-blur-md fixed w-full z-10 border-b border-[#00ff88]">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <a th:href="@{/}" class="text-2xl font-extrabold neon-text">MaxWebPro</a>
+    <nav class="space-x-6">
+      <a th:href="@{/}" class="hover:text-[#00ff88]">Начало</a>
+      <a th:href="@{/services}" class="hover:text-[#00ff88]">Услуги</a>
+      <a th:href="@{/portfolio}" class="hover:text-[#00ff88]">Портфолио</a>
+      <a th:href="@{/contact}" class="hover:text-[#00ff88]">Контакт</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-20">

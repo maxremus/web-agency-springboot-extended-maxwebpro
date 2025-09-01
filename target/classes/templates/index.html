@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/fragments :: head(#{home.title}, #{site.description}, ${baseUrl})"></head>
+<head th:replace="fragments/header :: head"></head>
 <body>
-<header th:replace="fragments/fragments :: header"></header>
+<div th:replace="fragments/header :: header"></div>
 
-<section class="py-16 text-center">
-  <img th:src="@{/images/hero-banner.svg}" alt="WEBX Hero" class="mx-auto mb-8 rounded-2xl shadow max-w-4xl w-full">
-  <h1 class="text-4xl font-bold mb-4" th:text="#{home.title}">WEBX — Модерни сайтове и eCommerce</h1>
-  <p class="text-lg text-slate-600 mb-6" th:text="#{site.description}">Изграждаме бързи, модерни сайтове и онлайн магазини със Spring Boot и Java.</p>
-  <a href="/contact" class="px-6 py-3 bg-blue-200 text-white rounded-lg hover:bg-blue-300">Свържете се с нас</a>
+<section class="relative">
+  <img th:src="@{/img/hero.png}" alt="Banner" class="w-full h-screen object-cover">
+  <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-center">
+    <div class="text-white max-w-2xl px-6">
+      <h1 class="text-5xl font-extrabold neon-text mb-6">Добре дошли в MaxWebPro</h1>
+      <p class="text-lg mb-8">Създаваме иновативни уеб решения с high-tech визия.</p>
+      <a th:href="@{/contact}" class="bg-[#00ff88] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#00cc66] transition">Свържи се с нас</a>
+    </div>
+  </div>
 </section>
 
-<footer th:replace="fragments/fragments :: footer"></footer>
+<section class="py-20 bg-[#1a1a1a]">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center neon-text mb-12">Нашите услуги</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="p-8 rounded-xl bg-black neon-box text-center">
+        <i class="fa-solid fa-laptop-code text-5xl text-[#00ff88] mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Уеб разработка</h3>
+        <p>Създаваме бързи, сигурни и адаптивни уебсайтове.</p>
+      </div>
+      <div class="p-8 rounded-xl bg-black neon-box text-center">
+        <i class="fa-solid fa-paint-brush text-5xl text-[#00ff88] mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">UI/UX Дизайн</h3>
+        <p>Модерна визия и удобство за потребителите.</p>
+      </div>
+      <div class="p-8 rounded-xl bg-black neon-box text-center">
+        <i class="fa-solid fa-chart-line text-5xl text-[#00ff88] mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Дигитален маркетинг</h3>
+        <p>Помагаме да достигнете до повече клиенти онлайн.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

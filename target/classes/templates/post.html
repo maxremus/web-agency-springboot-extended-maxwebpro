@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
-  <th:block th:replace="fragments/fragments :: head(${post.title}, ${post.excerpt}, 'http://localhost:8080/blog/' + post.slug})"></th:block>
-  <body>
-  <th:block th:replace="fragments/fragments :: body"></th:block>
-  <main class="container py-12 max-w-3xl">
-    <a href="/blog" class="text-sm underline decoration-2">&larr; <span th:text="#{blog.back}">Назад към блога</span></a>
-    <article class="mt-4 prose prose-slate max-w-none dark:prose-invert">
-      <h1 th:text="${post.title}">Заглавие</h1>
-      <div class="text-xs text-slate-500" th:text="${#temporals.format(post.date, 'dd.MM.yyyy')}">01.01.2025</div>
-      <p th:text="${post.content}">Съдържание...</p>
-    </article>
-  </main>
-  <th:block th:replace="fragments/fragments :: footer"></th:block>
-  </body>
+<head th:replace="fragments/header :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<section class="py-20">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <img th:src="@{/img/blog1.png}" class="w-full h-80 object-cover rounded mb-6">
+    <h1 class="text-4xl font-extrabold neon-text mb-6">Заглавие на статия</h1>
+    <p class="text-gray-400 mb-8">Публикувано на 01.09.2025</p>
+    <p class="mb-4">Тук ще бъде съдържанието на статията...</p>
+    <p class="mb-4">Можем да добавим текст, изображения и линкове за по-добро представяне.</p>
+  </div>
+</section>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
 </html>

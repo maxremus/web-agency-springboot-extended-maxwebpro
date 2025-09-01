@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
-  <th:block th:replace="fragments/fragments :: head(#{blog.title}, #{blog.desc}, 'http://localhost:8080/blog')"></th:block>
-  <body>
-  <th:block th:replace="fragments/fragments :: body"></th:block>
-  <main class="container py-12 max-w-3xl">
-    <h1 class="text-3xl md:text-4xl font-bold" th:text="#{blog.title}">Блог</h1>
-    <p class="mt-2 text-slate-600 dark:text-slate-300" th:text="#{blog.desc}">Съвети, опит и практики.</p>
-    <div class="mt-8 space-y-6">
-      <article th:each="p : ${posts}" class="p-6 rounded-2xl border shadow-sm bg-white dark:bg-slate-900 dark:border-slate-800">
-        <a th:href="@{'/blog/' + ${p.slug}}" class="block">
-          <h2 class="text-xl font-semibold" th:text="${p.title}">Заглавие</h2>
-          <div class="text-xs text-slate-500 mt-1" th:text="${#temporals.format(p.date, 'dd.MM.yyyy')}">01.01.2025</div>
-          <p class="mt-2 text-slate-600 dark:text-slate-300" th:text="${p.excerpt}">Кратко описание...</p>
-        </a>
-      </article>
+<head th:replace="fragments/header :: head"></head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<section class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center neon-text mb-12">Блог</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-black neon-box rounded-xl overflow-hidden">
+        <img th:src="@{/img/blog1.png}" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Нова технология</h3>
+          <p class="mb-4">Научи повече за последните иновации...</p>
+          <a th:href="@{/post}" class="text-[#00ff88] hover:underline">Прочети повече</a>
+        </div>
+      </div>
+      <div class="bg-black neon-box rounded-xl overflow-hidden">
+        <img th:src="@{/img/blog2.png}" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Успешни практики</h3>
+          <p class="mb-4">Как да развиеш дигиталния си бизнес...</p>
+          <a th:href="@{/post}" class="text-[#00ff88] hover:underline">Прочети повече</a>
+        </div>
+      </div>
     </div>
-  </main>
-  <th:block th:replace="fragments/fragments :: footer"></th:block>
-  </body>
+  </div>
+</section>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
 </html>
