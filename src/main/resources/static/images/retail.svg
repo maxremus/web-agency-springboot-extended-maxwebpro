@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="30" fill="url(#g2)"/>
+  <g fill="#fff" font-family="Inter,Segoe UI,Roboto,Arial,sans-serif">
+    <text x="60" y="330" font-size="64" font-weight="700">Retail eCommerce</text>
+    <text x="60" y="400" font-size="28" opacity="0.9">Каталог, плащания, доставки</text>
+  </g>
+</svg>

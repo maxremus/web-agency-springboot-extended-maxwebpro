@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="fragments/fragments :: head(${post.title}, ${post.excerpt}, 'http://localhost:8080/blog/' + post.slug})"></th:block>
+  <body>
+  <th:block th:replace="fragments/fragments :: body"></th:block>
+  <main class="container py-12 max-w-3xl">
+    <a href="/blog" class="text-sm underline decoration-2">&larr; <span th:text="#{blog.back}">Назад към блога</span></a>
+    <article class="mt-4 prose prose-slate max-w-none dark:prose-invert">
+      <h1 th:text="${post.title}">Заглавие</h1>
+      <div class="text-xs text-slate-500" th:text="${#temporals.format(post.date, 'dd.MM.yyyy')}">01.01.2025</div>
+      <p th:text="${post.content}">Съдържание...</p>
+    </article>
+  </main>
+  <th:block th:replace="fragments/fragments :: footer"></th:block>
+  </body>
+</html>

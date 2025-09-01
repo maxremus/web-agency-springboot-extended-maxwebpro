@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title, desc, canonical)">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${title} ?: 'WEBX — Агенция за сайтове и онлайн магазини'">WEBX — Агенция</title>
+
+  <!-- използвай параметъра desc -->
+  <meta name="description" th:content="${desc} ?: 'Изграждаме бързи, модерни сайтове и онлайн магазини със Spring Boot и Java.'">
+
+  <!-- canonical от параметър -->
+  <link th:if="${canonical}" rel="canonical" th:href="${canonical}"/>
+
+  <link rel="icon" th:href="@{/images/favicon.svg}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Ubuntu','Cantarell','Noto Sans','Helvetica Neue','Arial','sans-serif'] },
+          container: { center: true, padding: '1rem' }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans bg-gradient-to-b from-white to-slate-50 text-slate-900">
+<header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b">
+  <div class="container flex items-center justify-between py-3">
+    <a href="/" class="flex items-center gap-2">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="text-slate-900"><path d="M12 2l9 4.9v9.8L12 22l-9-4.9V6.9L12 2zm0 2.2L5 7v10l7 3.8 7-3.8V7l-7-2.8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span class="text-lg font-bold tracking-tight">WEBX</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="/" class="hover:opacity-70" th:classappend="${page}=='home' ? ' font-semibold underline decoration-2' : ''">Начало</a>
+      <a href="/services" class="hover:opacity-70" th:classappend="${page}=='services' ? ' font-semibold underline decoration-2' : ''">Услуги</a>
+      <a href="/portfolio" class="hover:opacity-70" th:classappend="${page}=='portfolio' ? ' font-semibold underline decoration-2' : ''">Портфолио</a>
+      <a href="/contact" class="hover:opacity-70" th:classappend="${page}=='contact' ? ' font-semibold underline decoration-2' : ''">Контакт</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border" aria-label="Отвори меню">
+      <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+    </button>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t">
+    <div class="container py-3 flex flex-col gap-3">
+      <a href="/" class="py-1">Начало</a>
+      <a href="/services" class="py-1">Услуги</a>
+      <a href="/portfolio" class="py-1">Портфолио</a>
+      <a href="/contact" class="py-1">Контакт</a>
+    </div>
+  </div>
+</header>
+<script src="/js/main.js" defer></script>
+<div class="min-h-[70vh]">
+
+</div>
+<footer class="border-t mt-16">
+  <div class="container py-10 grid gap-8 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2 font-semibold">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 4.9v9.8L12 22l-9-4.9V6.9L12 2zm0 2.2L5 7v10l7 3.8 7-3.8V7l-7-2.8z"/><circle cx="12" cy="12" r="3"/></svg>
+        WEBX
+      </div>
+      <p class="mt-3 text-sm text-slate-600">Агенция за разработка на сайтове и онлайн магазини със Spring Boot и Java.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-3">Навигация</h3>
+      <ul class="space-y-2 text-slate-700">
+        <li><a href="/">Начало</a></li>
+        <li><a href="/services">Услуги</a></li>
+        <li><a href="/portfolio">Портфолио</a></li>
+        <li><a href="/contact">Контакт</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-3">Свържете се</h3>
+      <p class="text-slate-700">Имейл: hello@webx.bg<br/>Тел: +359 88 123 4567</p>
+    </div>
+  </div>
+  <div class="border-t">
+    <div class="container py-4 text-xs text-slate-500">© <span th:text="${#dates.format(new java.util.Date(), 'yyyy')}">2025</span> WEBX. Всички права запазени.</div>
+  </div>
+</footer>
+</body>
+</html>

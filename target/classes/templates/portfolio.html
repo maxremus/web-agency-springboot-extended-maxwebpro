@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head('Портфолио — WEBX', #{site.description}, ${baseUrl + '/portfolio'})"></head>
+<body>
+<header th:replace="fragments/fragments :: header"></header>
+
+<section class="py-16 container">
+  <h1 class="text-3xl font-bold mb-10 text-center">Наши проекти</h1>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="rounded-2xl border overflow-hidden shadow-sm">
+      <img th:src="@{/images/retail.svg}" alt="Retail eCommerce" class="w-full">
+      <div class="p-4">
+        <h3 class="font-semibold">Retail eCommerce</h3>
+        <p class="text-sm text-slate-600">Каталог 5k+ продукта, плащания и куриери.</p>
+      </div>
+    </div>
+    <div class="rounded-2xl border overflow-hidden shadow-sm">
+      <img th:src="@{/images/corporate.svg}" alt="Corporate" class="w-full">
+      <div class="p-4">
+        <h3 class="font-semibold">Корпоративен сайт</h3>
+        <p class="text-sm text-slate-600">SEO-оптимизиран, бърз и елегантен.</p>
+      </div>
+    </div>
+    <div class="rounded-2xl border overflow-hidden shadow-sm">
+      <img th:src="@{/images/b2b.svg}" alt="B2B" class="w-full">
+      <div class="p-4">
+        <h3 class="font-semibold">B2B платформа</h3>
+        <p class="text-sm text-slate-600">Роли, отчети и интеграции чрез REST API.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>

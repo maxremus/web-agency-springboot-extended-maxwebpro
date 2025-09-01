@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head('Услуги — WEBX', #{site.description}, ${baseUrl + '/services'})"></head>
+<body>
+<header th:replace="fragments/fragments :: header"></header>
+
+<section class="py-16 container grid md:grid-cols-2 gap-10">
+  <div class="rounded-xl border shadow-sm overflow-hidden">
+    <img th:src="@{/images/retail.svg}" alt="eCommerce" class="w-full">
+    <div class="p-4">
+      <h2 class="font-semibold text-xl mb-2">Онлайн магазини</h2>
+      <p>Пълна интеграция с плащания, доставки и управление на продукти.</p>
+    </div>
+  </div>
+  <div class="rounded-xl border shadow-sm overflow-hidden">
+    <img th:src="@{/images/corporate.svg}" alt="Corporate Site" class="w-full">
+    <div class="p-4">
+      <h2 class="font-semibold text-xl mb-2">Корпоративни сайтове</h2>
+      <p>SEO оптимизация, блог модул, бързо зареждане и модерна визия.</p>
+    </div>
+  </div>
+  <div class="rounded-xl border shadow-sm overflow-hidden">
+    <img th:src="@{/images/b2b.svg}" alt="B2B" class="w-full">
+    <div class="p-4">
+      <h2 class="font-semibold text-xl mb-2">B2B платформи</h2>
+      <p>Сложни роли, партньорски акаунти, отчети и интеграции чрез API.</p>
+    </div>
+  </div>
+  <div class="rounded-xl border shadow-sm overflow-hidden">
+    <img th:src="@{/images/seo.svg}" alt="SEO" class="w-full">
+    <div class="p-4">
+      <h2 class="font-semibold text-xl mb-2">SEO и поддръжка</h2>
+      <p>Core Web Vitals, аналитика и постоянна оптимизация.</p>
+    </div>
+  </div>
+</section>
+
+<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>

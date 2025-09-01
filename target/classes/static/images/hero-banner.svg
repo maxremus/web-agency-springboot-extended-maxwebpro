@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="40" fill="url(#g1)"/>
+  <g fill="#fff" font-family="Inter,Segoe UI,Roboto,Arial,sans-serif">
+    <text x="80" y="440" font-size="80" font-weight="800">WEBX</text>
+    <text x="80" y="520" font-size="36" opacity="0.9">Модерни сайтове и eCommerce с Java Spring Boot</text>
+  </g>
+</svg>

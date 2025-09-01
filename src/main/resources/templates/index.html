@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head(#{home.title}, #{site.description}, ${baseUrl})"></head>
+<body>
+<header th:replace="fragments/fragments :: header"></header>
+
+<section class="py-16 text-center">
+  <img th:src="@{/images/hero-banner.svg}" alt="WEBX Hero" class="mx-auto mb-8 rounded-2xl shadow max-w-4xl w-full">
+  <h1 class="text-4xl font-bold mb-4" th:text="#{home.title}">WEBX — Модерни сайтове и eCommerce</h1>
+  <p class="text-lg text-slate-600 mb-6" th:text="#{site.description}">Изграждаме бързи, модерни сайтове и онлайн магазини със Spring Boot и Java.</p>
+  <a href="/contact" class="px-6 py-3 bg-blue-200 text-white rounded-lg hover:bg-blue-300">Свържете се с нас</a>
+</section>
+
+<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>
